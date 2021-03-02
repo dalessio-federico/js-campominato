@@ -17,7 +17,7 @@ function randomNumberGenerator( min , max)
 function numberCheck (val1, array)
 {   
     var check = true;
-    for(i=0; i<array.length; i++)
+    for(i=0; (i<array.length && check == true); i++)
     {
         if( val1 == array[i])
         {
@@ -36,7 +36,10 @@ while( maxValue !=1 && maxValue !=2 && maxValue !=3 )
 {
     alert("inserire un numero tra 1, 2 ,3")
     maxValue = parseInt(prompt("Scegli la difficoltà!(1: facile[100 numeri]. 2: medio[80 numeri] 3:Difficile[60 numeri])"))
-    
+    if(isNaN(maxValue))
+    {
+        alert("Inserire un numero!")
+    }
 }
 
 switch (maxValue) 
@@ -65,14 +68,14 @@ console.log(maxValue);
 //    dobbiamo far ripetere l'operazione finché la length dell'array non è pari a 15( sedici numeri).
 
 var failNumberList = [];
-
+var bombNumber = 16;
 do {
     var generateNumber = randomNumberGenerator(1, maxValue);
     if(numberCheck(generateNumber , failNumberList))
     {
         failNumberList.push(generateNumber);
     }
-    } while (failNumberList.length < 16);
+    } while (failNumberList.length < bombNumber);
 
 console.log(failNumberList);
 
@@ -91,7 +94,7 @@ console.log(failNumberList);
 
 var resultList = [];
 
-for(; resultList.length <(maxValue- 16);)
+for(; resultList.length <(maxValue- bombNumber);)
 {
     var userNumber = parseInt(prompt("inserisci un numero da 1 a " + maxValue));
     if(isNaN(userNumber))
@@ -112,14 +115,14 @@ for(; resultList.length <(maxValue- 16);)
     {
         alert("Il numero è già stato inserito inseriscine un altro");
     }
-    else if( resultList.length != (maxValue - 16))
+    else if( resultList.length != (maxValue - bombNumber))
     {
         resultList.push(userNumber);
     }
 }
 console.log(resultList);
 
-if (resultList.length == (maxValue - 16))
+if (resultList.length == (maxValue - bombNumber))
 {
     alert("Complimenti Punteggio pieno!")
 }
