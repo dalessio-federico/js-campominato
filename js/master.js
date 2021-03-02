@@ -31,7 +31,13 @@ function numberCheck (val1, array)
 //         facciamo scegliere all'utente la difficoltà tramite l'immissione di un numero,
 //         al numero corrisponde la modifica da apportare alla variabile.
 
-/*var maxValue = parseInt(prompt("Scegli la difficoltà!(1: facile[100 numeri]. 2: medio[80 numeri] 3:Difficile[60 numeri])"))
+var maxValue = parseInt(prompt("Scegli la difficoltà!(1: facile[100 numeri]. 2: medio[80 numeri] 3:Difficile[60 numeri])"))
+while( maxValue !=1 && maxValue !=2 && maxValue !=3 )
+{
+    alert("inserire un numero tra 1, 2 ,3")
+    maxValue = parseInt(prompt("Scegli la difficoltà!(1: facile[100 numeri]. 2: medio[80 numeri] 3:Difficile[60 numeri])"))
+    
+}
 
 switch (maxValue) 
 {
@@ -47,13 +53,10 @@ switch (maxValue)
         maxValue = 60;
         alert("hai scelto la difficoltà difficile!")
         break;
-    default:
-        alert("inserire un numero tra 1, 2 ,3")
 }
 console.log(maxValue);
 
-Da completare, trovare il modo di istanziare un ciclo che permetta di uscire solo una volta che la variabile ha uno dei tre valori selezionati.*/
-
+//completato con l'aiuto della santa Laura.
 
 
 // dobbiamo instaurare un ciclo per generare 16 numeri, e salvarli in un array.
